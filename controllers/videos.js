@@ -5,7 +5,7 @@ const Video = require("../models/videos");
 
 // ** Routes **
 // Index
-videosRouter.get("/", async (req, res) => {
+videosRouter.get("/Videos", async (req, res) => {
     try {
         // send all notes
         res.json(await Video.find({}));
@@ -16,7 +16,7 @@ videosRouter.get("/", async (req, res) => {
 })
 
 // Create
-videosRouter.post('/', async (req, res)=>{
+videosRouter.post('/Videos', async (req, res)=>{
     try{
         res.json(await Video.create(req.body))
     } catch (error){
@@ -25,7 +25,7 @@ videosRouter.post('/', async (req, res)=>{
 })
 
 // Delete
-videosRouter.delete('/:id', async (req, res)=>{
+videosRouter.delete('Videos/:id', async (req, res)=>{
     try{
         res.json(await Video.findByIdAndDelete(req.params.id))
     } catch(error){
