@@ -25,7 +25,7 @@ videosRouter.post('/Videos', async (req, res)=>{
 })
 
 // Delete
-videosRouter.delete('Videos/:id', async (req, res)=>{
+videosRouter.delete('/:id', async (req, res)=>{
     try{
         res.json(await Video.findByIdAndDelete(req.params.id))
     } catch(error){
